@@ -20,7 +20,7 @@ function Reviews() {
       }
     }
     fetchReviews();
-  }, []);
+  }, [movieId]);
 
   return (
     isLoaded &&
@@ -30,7 +30,7 @@ function Reviews() {
       <ReviewsList>
         {reviews.map(({ id, author, content, author_details: { rating } }) => (
           <li key={id}>
-            <img src={avatar} width="40" />
+            <img src={avatar} width="40" alt={author} />
             <Author>{author}</Author>
             <p>{content}</p>
           </li>

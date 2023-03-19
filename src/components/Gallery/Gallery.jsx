@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
 import placeholder from 'images/placeholder.webp';
 import { Grid, Movie, Title } from './Gallery.styled';
 
 function Gallery({ movies }) {
   const location = useLocation();
-  // const [movie]
   return (
     <>
       <Grid>
@@ -23,6 +21,7 @@ function Gallery({ movies }) {
                     : placeholder
                 }
                 width="300"
+                alt={title}
               />
               <Title>{title}</Title>
             </Link>

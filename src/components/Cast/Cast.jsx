@@ -16,7 +16,7 @@ const Cast = () => {
       }
     }
     fetchCast();
-  }, []);
+  }, [movieId]);
 
   const { movieId } = useParams();
   return (
@@ -30,6 +30,7 @@ const Cast = () => {
                   ? 'https://image.tmdb.org/t/p/w500' + profile_path
                   : actorPlaceholder
               }
+              alt={name}
             />
             <p>{name}</p>
             <Character>{character}</Character>

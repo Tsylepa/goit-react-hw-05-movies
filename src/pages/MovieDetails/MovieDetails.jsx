@@ -1,5 +1,5 @@
 import { useEffect, useState, Suspense } from 'react';
-import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { getMovieById } from '../../requests';
 import placeholder from 'images/placeholder.webp';
 import { Info, Back, MoreInfo, MoreLink, Meta } from './MovieDetails.styled';
@@ -49,6 +49,7 @@ function MovieDetails() {
               : placeholder
           }
           width="300"
+          alt={title}
         />
         <div>
           <h2>{title}</h2>

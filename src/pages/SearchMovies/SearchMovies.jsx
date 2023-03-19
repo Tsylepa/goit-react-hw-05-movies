@@ -30,7 +30,7 @@ function SearchMovies() {
     }
     setSearchParams({ query });
     search();
-  }, [query]);
+  }, [query, setSearchParams]);
 
   function onSubmit(e) {
     e.preventDefault();
