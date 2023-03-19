@@ -5,6 +5,7 @@ import { Character, Grid } from './Cast.styled';
 import actorPlaceholder from 'images/placeholder-profile.jpg';
 const Cast = () => {
   const [cast, setCast] = useState(null);
+  const { movieId } = useParams();
 
   useEffect(() => {
     async function fetchCast() {
@@ -18,7 +19,6 @@ const Cast = () => {
     fetchCast();
   }, [movieId]);
 
-  const { movieId } = useParams();
   return (
     cast && (
       <Grid>
