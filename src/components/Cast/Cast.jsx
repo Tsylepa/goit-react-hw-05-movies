@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'requests';
 import { useState, useEffect } from 'react';
-
+import { Character, Grid } from './Cast.styled';
+import actorPlaceholder from 'images/placeholder-profile.jpg';
 const Cast = () => {
   const [cast, setCast] = useState(null);
 
@@ -15,19 +16,26 @@ const Cast = () => {
       }
     }
     fetchCast();
-  });
+  }, []);
 
   const { movieId } = useParams();
   return (
     cast && (
-      <ul>
-        {cast.map(({ id, character, name }) => (
+      <Grid>
+        {cast.map(({ id, character, name, profile_path }) => (
           <li key={id}>
+            <img
+              src={
+                profile_path
+                  ? 'https://image.tmdb.org/t/p/w500' + profile_path
+                  : actorPlaceholder
+              }
+            />
             <p>{name}</p>
-            <p>{character}</p>
+            <Character>{character}</Character>
           </li>
         ))}
-      </ul>
+      </Grid>
     )
   );
 };

@@ -3,8 +3,8 @@ import { lazy } from 'react';
 
 const SharedLayout = lazy(() => import('./ShareLayout'));
 const Home = lazy(() => import('pages/Home'));
-const SearchMovies = lazy(() => import('pages/SearchMovies'));
-const MovieDetails = lazy(() => import('pages/MovieDetails'));
+const SearchMovies = lazy(() => import('pages/SearchMovies/SearchMovies'));
+const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
 const Reviews = lazy(() => import('./Reviews'));
 const Cast = lazy(() => import('./Cast'));
 

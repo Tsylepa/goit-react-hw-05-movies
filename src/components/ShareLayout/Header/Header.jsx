@@ -1,4 +1,5 @@
-const { Link } = require('react-router-dom');
+import { Container } from '../SharedLayout.styled';
+import { Wrapper, NavList, Page } from './Header.styled';
 
 const navItems = {
   home: '/',
@@ -8,15 +9,21 @@ const navItemsKeys = Object.keys(navItems);
 
 function Header() {
   return (
-    <nav>
-      <ul>
-        {navItemsKeys.map(page => (
-          <li key={page}>
-            <Link to={navItems[page]}>{page}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <Wrapper>
+      <Container>
+        <nav>
+          <NavList>
+            {navItemsKeys.map(page => (
+              <li key={page}>
+                <Page to={navItems[page]} activeclassname="active">
+                  {page}
+                </Page>
+              </li>
+            ))}
+          </NavList>
+        </nav>
+      </Container>
+    </Wrapper>
   );
 }
 

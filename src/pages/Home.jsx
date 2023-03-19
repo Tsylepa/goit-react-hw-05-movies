@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { getTrending } from '../requests';
-import Gallery from '../utils/gallery';
+import { getTrending } from 'requests';
+import Gallery from 'components/Gallery';
+import Loader from 'components/Loader';
 
 function Home() {
   const [trending, setTrending] = useState([]);
@@ -19,7 +20,7 @@ function Home() {
     init();
   }, []);
 
-  return <>{isLoaded && <Gallery movies={trending} />}</>;
+  return <>{!isLoaded ? <Loader /> : <Gallery movies={trending} />}</>;
 }
 
 export default Home;
